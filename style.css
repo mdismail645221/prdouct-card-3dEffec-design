@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #131313;
+}
+
+.container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+}
+
+.container .box {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    margin: 40px;
+    border-radius: 15px;
+    background-color: #232323;
+    transform-style: preserve-3d;
+    z-index: 10;
+    box-shadow: 1px 1px 5px 3px #ddd;
+}
+
+.container .box::before{
+    position: absolute;
+    content: "Suppliment";
+    bottom: 20px;
+    left: 20px;
+    font-size: 4em;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+.container .box::after{
+    position: absolute;
+    content: "Prdouct";
+    top: 20px;
+    left: 50%;
+    font-size: 4em;
+    font-weight: 900;
+    color: #fff;
+    font-style: italic;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.container .box:hover:before,
+.container .box:hover::after
+ {
+    opacity: 0.07;
+
+}
+
+.container .box .name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0, 0, 80px);
+    transition: 0.5s;
+    font-size: 4rem;
+    z-index: 10; 
+    opacity: 0;
+}
+
+.container .box:hover .name {
+    top: 40px;
+    opacity: 1;
+    transition: 0.5s;
+    text-shadow: 1px 1px 1px #000;
+}
+
+
+.container .box .buy {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, 0, 75px);
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fff;
+    background-color: blue;
+    padding: 0.7rem 2rem;
+    border: 1px solid blue;
+    border-radius: 15px;
+    z-index: 10;
+    opacity: 0;
+}
+
+
+.container .box:hover .buy {
+    bottom: 30px;
+    opacity: 1;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.container .box .circle {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    border: 1px solid blue;
+    border-radius: 50%;
+    transition: 0.5s;
+    background-color: blue;
+    transform-style: preserve-3d;
+    z-index: 10; 
+    transform: translate(-50%, -50%);
+    opacity: 1;
+} 
+
+
+.box .product {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    transition: 0.5s;
+    z-index: 200 !important;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%, -50%, 0px) rotate(-15deg); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
